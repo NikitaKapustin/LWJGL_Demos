@@ -18,7 +18,7 @@ public class Model implements Renderable{
 	static{
 		tetrahedron.vertex_data = new float[]{0, 0, 3, 0, (float)Math.sqrt(8), -1, (float)Math.sqrt(6), -(float)Math.sqrt(2), -1, -(float)Math.sqrt(6), -(float)Math.sqrt(2), -1};
 		tetrahedron.colour_data = new float[]{1.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
-		tetrahedron.index_data = new int[]{0, 1, 2, 1, 0, 3, 2, 1, 3, 0, 2, 3}; //TRIANGLES
+		tetrahedron.index_data = new int[]{0, 2, 1, 1, 3, 0, 2, 3, 1, 0, 3, 2}; //TRIANGLES //(counter-clockwise)
 		//tetrahedron.index_data = new int[]{0, 1, 1, 2, 2, 3, 3, 0, 0, 2, 1, 3}; tetrahedron.draw_type = GL_LINES; //LINES
 	}
 	public static final Model cube = new Model();
@@ -26,7 +26,7 @@ public class Model implements Renderable{
 		cube.vertex_data = new float[]{1,1,1, 1,1,-1, 1,-1,-1, 1,-1,1, -1,1,1, -1,1,-1, -1,-1,-1, -1,-1,1};
 		cube.colour_data = new float[cube.vertex_data.length];
 		Arrays.fill(cube.colour_data, 1.0f);
-		cube.index_data = new int[]{4,0,5, 4,7,0, 4,5,7, 2,6,1, 2,3,6, 2,1,3};
+		cube.index_data = new int[]{4,0,5, 4,7,0, 4,5,7, 2,6,1, 2,3,6, 2,1,3, 0,1,5, 7,3,0, 5,6,7, 6,5,1, 3,7,6, 1,0,3};
 	}
 	public static final Model orientational_grid = new Model();
 	static{
